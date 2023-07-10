@@ -22,7 +22,7 @@ class MuscleGroup(models.Model):
 
 class Exercise(models.Model):
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=800)
     muscle_group = models.ForeignKey(MuscleGroup, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):

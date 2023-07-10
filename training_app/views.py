@@ -5,9 +5,8 @@ from .models import Exercise, MuscleGroup
 
 # Create your views here.
 def muscle_group_list(request):
-    muscle_groups = MuscleGroup.objects.all()
-    data = {"muscle_groups": list(muscle_groups.values())}
-    return JsonResponse(data)
+    muscle_groups = MuscleGroup.objects.all().values()
+    return JsonResponse(list(muscle_groups), safe=False)
 
 
 def exercises_list(request):
